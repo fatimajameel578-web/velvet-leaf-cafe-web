@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Velvet &amp; Leaf - Artisan Coffee &amp; Botanical Tea Lounge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+</head>
+<body>
+
+<div class="app-viewport">
+
+    <!-- ================= 1. LOGIN VIEW ================= -->
+    <div id="view-login" class="auth-container">
+        <div class="auth-header">
+            <div class="brand-emblem">
+                <svg viewBox="0 0 24 24"><path d="M2,21h18v-2H2v2zM20,8h-2V5h2c1.1,0 2,0.9 2,2v1c0,1.1 -0.9,2 -2,2zM4,19h12c1.1,0 2,-0.9 2,-2V5H4v12c0,1.1 0.9,2 2,2z"/></svg>
+            </div>
+            <h1>Velvet &amp; Leaf</h1>
+            <p>Artisan Coffee &amp; Botanical Tea Lounge</p>
+        </div>
+
+        <div class="auth-card">
+            <h2>Welcome Back</h2>
+            <p class="card-subtitle">Sip, relax, and savor your favorite handcrafted brew</p>
+
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="loginEmail" placeholder="e.g., alex.rivers@example.com" autocomplete="email">
+                    </div>
+                    <span id="emailError" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password">
+                        <button type="button" class="toggle-password" id="toggleLoginPassword" aria-label="Toggle password visibility"></button>
+                    </div>
+                    <span id="passwordError" class="error-msg"></span>
+                </div>
+
+                <div class="form-row-remember">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe" checked>
+                        <span>Remember Me</span>
+                    </label>
+                    <a href="#" class="forgot-link" id="forgotPasswordLink">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn-primary" id="btnSignIn">Sign In to Cafe</button>
+                <button type="button" class="btn-demo" id="btnDemoLogin">⚡ Quick Demo Login (Instant Fill)</button>
+            </form>
+        </div>
+
+        <div class="auth-footer-prompt">
+            <span>New to Velvet &amp; Leaf? </span>
+            <a href="#" id="toRegisterLink">Register Here</a>
+        </div>
+    </div>
+
+    <!-- ================= 2. REGISTER VIEW ================= -->
+    <div id="view-register" class="auth-container hidden">
+        <div class="auth-header">
+            <div class="brand-emblem" style="background: linear-gradient(135deg, var(--tea-matcha), var(--coffee-primary));">
+                <svg viewBox="0 0 24 24"><path d="M17,8C8,10 5.9,16.17 3.82,21.34l1.89,0.66C7.2,17.9 9.38,13.72 17,12V8zM21,3c-4.97,0 -11.9,3.03 -14.65,7.35C5.45,11.75 5,13.34 5,15c0,0.34 0.02,0.67 0.06,1C7.88,14.65 12.55,14 17,14c1.1,0 2,-0.9 2,-2V6.44C20.19,5.29 21,3.87 21,3z"/></svg>
+            </div>
+            <h1>Create Account</h1>
+            <p>Join our Brew Rewards club and earn free cups</p>
+        </div>
+
+        <div class="auth-card">
+            <h2>Sign Up</h2>
+            <p class="card-subtitle">Begin earning 10 points per dollar spent</p>
+
+            <form id="registerForm" novalidate>
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="regName" placeholder="e.g., Sophia Miller">
+                    </div>
+                    <span id="regNameError" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="regEmail" placeholder="e.g., sophia.miller@example.com">
+                    </div>
+                    <span id="regEmailError" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPhone">Phone Number (Optional)</label>
+                    <div class="input-wrapper">
+                        <input type="tel" id="regPhone" placeholder="e.g., +1 (555) 019-2834">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="regPassword" placeholder="Minimum 6 characters">
+                        <button type="button" class="toggle-password" id="toggleRegPassword" aria-label="Toggle password visibility"></button>
+                    </div>
+                    <span id="regPasswordError" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="regConfirmPassword" placeholder="Re-enter password">
+                        <button type="button" class="toggle-password" id="toggleRegConfirmPassword" aria-label="Toggle password visibility"></button>
+                    </div>
+                    <span id="regConfirmError" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label" style="font-size: 12px; margin-top: 4px;">
+                        <input type="checkbox" id="agreeTerms" checked>
+                        <span>I agree to the Terms of Service &amp; Loyalty Program</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary" id="btnRegisterSubmit">Create My Brew Account</button>
+            </form>
+        </div>
+
+        <div class="auth-footer-prompt">
+            <span>Already have an account? </span>
+            <a href="#" id="toLoginLink">Sign In</a>
+        </div>
+    </div>
+
+    <!-- ================= 3. DASHBOARD VIEW ================= -->
+    <div id="view-dashboard" class="dashboard-container hidden">
+
+        <!-- Top Sticky Header -->
+        <header class="dash-topbar">
+            <div class="user-greeting">
+                <span class="greeting-time" id="userGreeting">Good Day ☕</span>
+                <span class="greeting-name" id="userName">Sophia Miller</span>
+            </div>
+            <div class="topbar-actions">
+                <div class="loyalty-badge-pill" id="loyaltyHeaderBadge">
+                    <svg viewBox="0 0 24 24"><path d="M12,2l3.09,6.26L22,9.27l-5,4.87 1.18,6.88L12,17.77l-6.18,3.25L7,14.14 2,9.27l6.91,-1.01L12,2z"/></svg>
+                    <span id="loyaltyHeaderPoints">350 pts</span>
+                </div>
+                <button class="btn-icon" id="btnLogout" title="Sign Out">
+                    <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;"><path d="M17,7l-1.41,1.41L18.17,11H8v2h10.17l-2.58,2.58L17,17l5,-5zM4,5h8V3H4c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h8v-2H4V5z"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Content -->
+        <main class="dash-content">
+
+            <!-- Today's Special Card -->
+            <section class="special-card">
+                <span class="special-tag">Today's Special</span>
+                <h2 class="special-title">Vanilla Cloud Nitro Cold Brew</h2>
+                <p class="special-subtitle">Slow-dripped for 18 hours with Madagascar vanilla sweet cold foam</p>
+                <div class="stamp-progress-bar">
+                    <div class="stamp-dots">
+                        <div class="stamp-dot filled"></div>
+                        <div class="stamp-dot filled"></div>
+                        <div class="stamp-dot filled"></div>
+                        <div class="stamp-dot filled"></div>
+                        <div class="stamp-dot filled"></div>
+                        <div class="stamp-dot filled"></div>
+                        <div class="stamp-dot filled"></div>
+                        <div class="stamp-dot filled"></div>
+                        <div class="stamp-dot"></div>
+                        <div class="stamp-dot"></div>
+                    </div>
+                    <span class="stamp-text">8 of 10 stamps • Next pour-over free!</span>
+                </div>
+            </section>
+
+            <!-- Quick Action Widgets (Active Orders, Rewards Points, Favorites) -->
+            <section class="widgets-row">
+                <div class="widget-card" id="widgetOrders">
+                    <div class="widget-icon icon-orders">
+                        <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;"><path d="M11.99,2C6.47,2 2,6.48 2,12s4.47,10 9.99,10C17.52,22 22,17.52 22,12S17.52,2 11.99,2zM12,20c-4.42,0 -8,-3.58 -8,-8s3.58,-8 8,-8 8,3.58 8,8 -3.58,8 -8,8zM12.5,7H11v6l5.25,3.15 0.75,-1.23 -4.5,-2.67z"/></svg>
+                    </div>
+                    <span class="widget-label">Active Orders</span>
+                    <span class="widget-value status-pulse">
+                        <span class="pulse-dot"></span>
+                        <span id="widgetOrdersVal">1 Brewing</span>
+                    </span>
+                </div>
+
+                <div class="widget-card" id="widgetRewards">
+                    <div class="widget-icon icon-rewards">
+                        <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;"><path d="M12,2l3.09,6.26L22,9.27l-5,4.87 1.18,6.88L12,17.77l-6.18,3.25L7,14.14 2,9.27l6.91,-1.01L12,2z"/></svg>
+                    </div>
+                    <span class="widget-label">Brew Points</span>
+                    <span class="widget-value" id="widgetPointsVal">350 Pts</span>
+                </div>
+
+                <div class="widget-card" id="widgetFavorites">
+                    <div class="widget-icon icon-favs">
+                        <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;"><path d="M12,21.35l-1.45,-1.32C5.4,15.36 2,12.28 2,8.5 2,5.42 4.42,3 7.5,3c1.74,0 3.41,0.81 4.5,2.09C13.09,3.81 14.76,3 16.5,3 19.58,3 22,5.42 22,8.5c0,3.78 -3.4,6.86 -8.55,11.54L12,21.35z"/></svg>
+                    </div>
+                    <span class="widget-label">Favorites</span>
+                    <span class="widget-value" id="widgetFavsVal">4 Saved</span>
+                </div>
+            </section>
+
+            <!-- Menu Category Selector Filter -->
+            <section class="menu-section">
+                <div class="menu-section-header">
+                    <h3>Handcrafted Menu</h3>
+                    <span class="item-count-label" id="itemCountLabel">8 items</span>
+                </div>
+
+                <div class="category-scroll" id="categoryScroll">
+                    <!-- Populated dynamically via app.js -->
+                </div>
+
+                <!-- Menu Items List -->
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Populated dynamically via app.js -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ================= 4. FLOATING BOTTOM CART BAR ================= -->
+    <aside class="floating-cart-bar hidden" id="floatingCartBar">
+        <div class="cart-bar-left">
+            <div class="cart-icon-bubble">
+                <svg viewBox="0 0 24 24"><path d="M7,18c-1.1,0 -1.99,0.9 -1.99,2S5.9,22 7,22s2,-0.9 2,-2 -0.9,-2 -2,-2zM1,2v2h2l3.6,7.59 -1.35,2.45c-0.16,0.28 -0.25,0.61 -0.25,0.96 0,1.1 0.9,2 2,2h12v-2H7.42c-0.14,0 -0.25,-0.11 -0.25,-0.25l0.03,-0.12 0.9,-1.63h7.45c0.75,0 1.41,-0.41 1.75,-1.03l3.58,-6.49c0.08,-0.14 0.12,-0.31 0.12,-0.48 0,-0.55 -0.45,-1 -1,-1H5.21l-0.94,-2H1zM17,18c-1.1,0 -1.99,0.9 -1.99,2s0.89,2 1.99,2 2,-0.9 2,-2 -0.9,-2 -2,-2z"/></svg>
+                <span class="cart-badge-count" id="cartBadgeCount">2</span>
+            </div>
+            <div class="cart-bar-text">
+                <span class="cart-bar-count" id="cartBarCount">2 items in order</span>
+                <span class="cart-bar-price" id="cartBarPrice">$11.50</span>
+            </div>
+        </div>
+        <button class="btn-view-cart">View Cart / Order</button>
+    </aside>
+
+    <!-- ================= 5. CART DRAWER / BOTTOM SHEET ================= -->
+    <div class="modal-overlay" id="drawerOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="drawer-drag-handle"></div>
+        <div class="drawer-header">
+            <h3>Your Brew Basket</h3>
+            <button class="btn-clear-cart" id="btnClearCart">Clear All</button>
+        </div>
+
+        <div class="drawer-items-list" id="drawerItemsList">
+            <!-- Dynamic Cart Items -->
+        </div>
+
+        <div class="cart-breakdown">
+            <div class="breakdown-row">
+                <span>Subtotal</span>
+                <span id="drawerSubtotal">$11.50</span>
+            </div>
+            <div class="breakdown-row">
+                <span>Tax &amp; Service (8%)</span>
+                <span id="drawerTax">$0.92</span>
+            </div>
+            <div class="breakdown-row total">
+                <span>Estimated Total</span>
+                <span id="drawerTotal">$12.42</span>
+            </div>
+        </div>
+
+        <button class="btn-primary" id="btnConfirmOrder" style="height: 52px;">
+            <span>Confirm &amp; Brew Order</span>
+        </button>
+    </div>
+
+    <!-- ================= 6. TOAST NOTIFICATIONS ================= -->
+    <div class="toast-notice" id="toastNotice"></div>
+
+</div>
+
+<!-- Application Scripts -->
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
